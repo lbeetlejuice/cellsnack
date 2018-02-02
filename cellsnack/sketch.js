@@ -1,7 +1,7 @@
 let bubbles = [];
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(850, 650);
   for (let i = 0; i < 20; i++) {
     let x = random(width);
     let y = random(height);
