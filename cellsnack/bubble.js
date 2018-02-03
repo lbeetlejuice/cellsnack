@@ -4,7 +4,6 @@ class Bubble {
     this.y = y;
     this.r = r;
     this.brightness = 0;
-    this.distance = -1;
   }
 
   intersects(other) {
@@ -31,9 +30,14 @@ class Bubble {
     this.y = this.y ;
   }
 
+  avoiding(other) {
+    other.x = other.x + 1;
+    other.y = other.y + 1;
+  }
+
   show() {
-    stroke(255);
-    strokeWeight(4);
+    // stroke(255);
+    // strokeWeight(4);
     fill(this.brightness, 125);
     ellipse(this.x, this.y, this.r * 2);
   }

@@ -6,7 +6,7 @@ class Player {
 	}
 
 	show(){
-		fill(250,200,200);
+		fill(200,200,200);
 		ellipse(this.x,this.y,this.r,this.r);
 	}
 
