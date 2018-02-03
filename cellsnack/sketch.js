@@ -1,13 +1,15 @@
 let bubbles = [];
+let player1;
 
 function setup() {
-  createCanvas(850, 650);
-  for (let i = 0; i < 20; i++) {
+  createCanvas(displayWidth, displayHeight);
+  for (let i = 0; i < 30; i++) {
     let x = random(width);
     let y = random(height);
-    let r = random(10, 30);
+    let r = random(10, 20);
     bubbles[i] = new Bubble(x, y, r);
   }
+  player1 = new Player(mouseX,mouseY,20)
 }
 
 function draw() {
@@ -28,4 +30,6 @@ function draw() {
       b.changeColor(0);
     }
   }
+
+  player1.show();
 }

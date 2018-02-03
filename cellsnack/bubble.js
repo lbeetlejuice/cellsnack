@@ -4,6 +4,7 @@ class Bubble {
     this.y = y;
     this.r = r;
     this.brightness = 0;
+    this.distance = -1;
   }
 
   intersects(other) {
@@ -25,13 +26,9 @@ class Bubble {
   }
 
   move() {
-		if(this.x > 800 || this.y > 600){
-			this.x = this.x + random(-1, 0);
-	    this.y = this.y + random(-1, 0);
-		} else {
-			this.x = this.x + random(-1, 1);
-	    this.y = this.y + random(-1, 1);
-		}
+    var z = random(-1,1);
+    this.x = this.x ;
+    this.y = this.y ;
   }
 
   show() {
