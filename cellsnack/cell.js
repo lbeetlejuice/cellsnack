@@ -1,18 +1,13 @@
-class Bubble {
+class Cell {
   constructor(x, y, r = 50) {
     this.x = x;
     this.y = y;
     this.r = r;
-    this.brightness = 0;
   }
 
   intersects(other) {
     let d = dist(this.x, this.y, other.x, other.y);
     return (d < this.r + other.r);
-  }
-
-  changeColor(bright) {
-    this.brightness = bright;
   }
 
   contains(px, py) {
@@ -24,21 +19,13 @@ class Bubble {
     }
   }
 
-  move() {
-    var z = random(-1,1);
-    this.x = this.x ;
-    this.y = this.y ;
-  }
-
   avoiding(other) {
     other.x = other.x + 1;
     other.y = other.y + 1;
   }
 
   show() {
-    // stroke(255);
-    // strokeWeight(4);
-    fill(this.brightness, 125);
+    fill(0, 125);
     ellipse(this.x, this.y, this.r * 2);
   }
 }

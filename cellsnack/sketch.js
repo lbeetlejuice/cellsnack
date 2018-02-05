@@ -1,43 +1,33 @@
-let bubbles = [];
-let player1;
+let cells = [];
+let player;
 
 function setup() {
   createCanvas(displayWidth, displayHeight);
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 125; i++) {
     let x = random(width);
     let y = random(height);
     let r = random(10, 20);
-    bubbles[i] = new Bubble(x, y, r);
+    cells[i] = new Cell(x, y, r);
   }
-  player1 = new Player(0,0,20)
+  player = new Player(0,0,30)
 }
 
 function draw() {
   background(255);
 
-  for (let b of bubbles) {
-    b.show();
-    b.move();
-    player1.show();
-    player1.x = mouseX;
-    player1.y = mouseY;
+  for (let c of cells) {
+    c.show();
+    player.show();
+    player.x = mouseX;
+    player.y = mouseY;
     let overlapping = false;
-    for (let other of bubbles) {
-      if (b !== other && b.intersects(other)) {
+    for (let other of cells) {
+      if (c !== other && c.intersects(other)) {
         overlapping = true;
       }
-      if(player1.intersects(other)){
-        b.avoiding(other);
+      if(player.intersects(other)){
+        c.avoiding(other);
       }
     }
-    if (overlapping) {
-      b.changeColor(0);
-    } else {
-      b.changeColor(0);
-    }
   }
-
-
-
-
 }
